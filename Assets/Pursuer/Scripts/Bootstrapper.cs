@@ -9,10 +9,11 @@ namespace Pursuer.Scripts
     {
         [Header("Settings Player")]
         [SerializeField] private Player _player;
-        [SerializeField] private PlayerStats _playerStats;
+        [SerializeField] private PlayerConfig playerConfig;
         
         [Header("Settings Enemy")]
         [SerializeField] private Enemy _enemy;
+        [SerializeField] private EnemyConfig enemyConfig;
         
         private PlayerInput _playerInput;
 
@@ -20,8 +21,8 @@ namespace Pursuer.Scripts
         {
             _playerInput = new PlayerInput();
             _playerInput.Initialize();
-            _player.Initialize(_playerInput, new PlayerMover(), _playerStats);
-            _enemy.Initialize(new EnemyFollower(), new EnemyMover());
+            _player.Initialize(_playerInput, new PlayerMover(), playerConfig);
+            _enemy.Initialize(new EnemyMover(), enemyConfig, _player.transform);
         }
     }
 }

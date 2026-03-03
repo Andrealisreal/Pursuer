@@ -6,13 +6,27 @@ namespace Pursuer.Scripts.Enemies
     [RequireComponent(typeof(CapsuleCollider))]
     public class Enemy : MonoBehaviour
     {
-        private EnemyFollower _follower;
         private EnemyMover _mover;
+        private EnemyConfig _config;
+        private Transform _target;
+        private Rigidbody _rigidbody;
+        
+        private void Awake() =>
+            _rigidbody = GetComponent<Rigidbody>();
+        
+        private void Start() =>
+            _rigidbody.freezeRotation = true;
 
-        public void Initialize(EnemyFollower follower, EnemyMover mover)
+        private void FixedUpdate()
         {
-            _follower = follower;
+            _mover.Move(_rigidbody, _target.position, _config.Speed);
+        }
+
+        public void Initialize(EnemyMover mover, EnemyConfig config, Transform target)
+        {
             _mover = mover;
+            _target = target;
+            _config = config;
         }
     }
 }

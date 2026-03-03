@@ -7,7 +7,7 @@ namespace Pursuer.Scripts.Players
     [RequireComponent(typeof(CapsuleCollider))]
     public class Player : MonoBehaviour
     {
-        private PlayerStats _stats;
+        private PlayerConfig _config;
         private PlayerInput _input;
         private PlayerMover _mover;
         private CharacterController _controller;
@@ -16,7 +16,7 @@ namespace Pursuer.Scripts.Players
             _controller = GetComponent<CharacterController>();
 
         private void FixedUpdate() =>
-            _mover.Move(_controller, _input.Movement, _stats.Speed, _stats.Gravity);
+            _mover.Move(_controller, _input.Movement, _config.Speed, _config.Gravity);
 
         private void OnEnable() =>
             _input.Enable();
@@ -24,9 +24,9 @@ namespace Pursuer.Scripts.Players
         private void OnDisable() =>
             _input.Disable();
 
-        public void Initialize(PlayerInput input, PlayerMover playerMover, PlayerStats stats)
+        public void Initialize(PlayerInput input, PlayerMover playerMover, PlayerConfig config)
         {
-            _stats = stats;
+            _config = config;
             _input = input;
             _mover = playerMover;
         }
