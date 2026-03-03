@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Pursuer.Scripts.Enemies
 {
-    [RequireComponent(typeof(CharacterController))]
+    [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(CapsuleCollider))]
     public class Enemy : MonoBehaviour
     {
