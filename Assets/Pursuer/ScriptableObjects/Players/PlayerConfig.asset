@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d9d7de5ac6a6a46bb3548bab97f088, type: 3}
   m_Name: PlayerConfig
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
-  Gravity: -9.81
-  Speed: 5
+  <Speed>k__BackingField: 5

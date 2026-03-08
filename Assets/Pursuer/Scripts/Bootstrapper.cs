@@ -10,11 +10,11 @@ namespace Pursuer.Scripts
         [Header("Settings Player")]
         [SerializeField] private Player _player;
         [SerializeField] private PlayerConfig playerConfig;
-        
+
         [Header("Settings Enemy")]
         [SerializeField] private Enemy _enemy;
         [SerializeField] private EnemyConfig enemyConfig;
-        
+
         private PlayerInput _playerInput;
 
         private void Awake()
@@ -22,7 +22,7 @@ namespace Pursuer.Scripts
             _playerInput = new PlayerInput();
             _playerInput.Initialize();
             _player.Initialize(_playerInput, new PlayerMover(), playerConfig);
-            _enemy.Initialize(new EnemyMover(), enemyConfig, _player.transform);
+            _enemy.Initialize(new EnemyMover(), enemyConfig, _player.transform, new EnemyNavigator());
         }
     }
 }

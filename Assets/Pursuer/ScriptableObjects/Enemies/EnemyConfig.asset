@@ -12,4 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b17f34a71f6e6d49b27030f0ef91f35, type: 3}
   m_Name: EnemyConfig
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStats
-  Speed: 3
+  <Speed>k__BackingField: 3
+  <MinDistanceTarget>k__BackingField: 3
+  <DistanceRayGround>k__BackingField: 2
+  <DistanceRayLadder>k__BackingField: 0.6
+  <OffsetRay>k__BackingField: {x: 0, y: -1, z: 0}
+  <LadderMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 8
+  <StepHeight>k__BackingField: 1
+  <StepSmooth>k__BackingField: 2
+  <MaxSlopeAngle>k__BackingField: 30
+  <GroundMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 64

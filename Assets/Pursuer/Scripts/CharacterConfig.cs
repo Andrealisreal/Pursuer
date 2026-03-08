@@ -4,6 +4,6 @@ namespace Pursuer.Scripts
 {
     public abstract class CharacterConfig : ScriptableObject
     {
-        public float Speed;
+        [field: SerializeField] public float Speed { get; private set; }
     }
 }
